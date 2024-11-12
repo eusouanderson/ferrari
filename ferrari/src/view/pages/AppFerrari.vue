@@ -3,9 +3,11 @@
     class="background-container" 
     :class="backgroundClass" 
     @mousemove="handleMouseMove"
+    :style="{ transform: transformStyle }"
   >
     <h1>Ferrari</h1>
-  </div>
+    <p class="quote">"The automobile is a poem in motion, and Ferrari is the expression of excellence in motorsport." — <strong>Enzo Ferrari</strong></p>
+  </div> 
 </template>
 
 <script>
@@ -19,21 +21,18 @@ export default {
     let timeout = null;
 
     const handleMouseMove = (event) => {
-      
       const { currentTarget } = event;
 
-      if (!currentTarget) return; // Se currentTarget for nulo, sai da função
-      
+      if (!currentTarget) return;
+
       if (timeout) {
         clearTimeout(timeout);
       }
 
-      
       timeout = setTimeout(() => {
         const { clientX, clientY } = event;
         const { offsetWidth, offsetHeight } = currentTarget;
 
-        
         const xPos = clientX / offsetWidth;
         const yPos = clientY / offsetHeight;
 
@@ -49,7 +48,6 @@ export default {
           backgroundClass.value = 'background1';
         }
 
-        
         const scaleX = (xPos - 0.5) * 0.2 + 1; 
         const scaleY = (yPos - 0.5) * 0.2 + 1; 
         transformStyle.value = `scale(${Math.max(scaleX, scaleY)})`; 
@@ -59,25 +57,25 @@ export default {
     return { backgroundClass, handleMouseMove, transformStyle };
   },
 };
-
-
 </script>
 
 <style scoped>
 .background-container {
-  width: auto;
-  height: 100vh;
+  width: 100%; 
+  height: 100vh; 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background-image 0.3s ease, transform 0.3s ease; 
-  background-size: cover;
+  transition: background-image 0.3s ease, transform 0.3s ease;
+  background-size: cover; 
   background-position: center;
   transform-origin: center; 
+  position: relative; 
 }
 
 .background-container:hover {
-  transform: scale(1.5); 
+  transform: scale(1.5);
 }
 
 .background1 {
@@ -100,7 +98,22 @@ export default {
   background-image: url('@/assets/img/ferrari4.jpg');
 }
 
-.background-container {
-  transform: var(--transform-style);
+h1, .quote {
+  background-color: rgba(0, 0, 0, 0.542);
+  text-align: center;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5%;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  color: white; 
+}
+
+.quote {
+  background-color: rgba(0, 0, 0, 0.542);
+  font-size: 1.5rem;
+  color: white; 
+  text-align: center;
+  max-width: 80%; 
+  margin-top: 0;
 }
 </style>

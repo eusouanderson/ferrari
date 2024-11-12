@@ -14,11 +14,12 @@ export default {
 
 <style scoped>
 .footer {
+  transform: scale(1.1); 
   text-align: center;
   position: fixed;
   bottom: 0;
-  width: auto; 
-  height: 50px;
+  width: 100%; 
+  height: auto;
   background: rgba(0, 0, 0, 0.723); 
   color: rgba(255, 255, 255, 0.8);
   display: flex;
@@ -31,6 +32,7 @@ export default {
 }
 
 .scrolling-text {
+  
   display: inline-block;
   white-space: nowrap;
   animation: scroll 15s linear infinite;
