@@ -5,7 +5,6 @@
     @mousemove="handleMouseMove"
     :style="{ transform: transformStyle }"
   >
-    <h1>Ferrari</h1>
     <p class="quote">"The automobile is a poem in motion, and Ferrari is the expression of excellence in motorsport." — <strong>Enzo Ferrari</strong></p>
   </div> 
 </template>
@@ -98,18 +97,8 @@ export default {
   background-image: url('@/assets/img/ferrari4.jpg');
 }
 
-h1, .quote {
-  background-color: rgba(0, 0, 0, 0.542);
-  text-align: center;
-  padding: 5px 5px 5px 5px;
-  border-radius: 5%;
-  margin-bottom: 20px;
-  font-size: 3rem;
-  color: white; 
-}
-
 .quote {
-  background-color: rgba(0, 0, 0, 0.542);
+  background-color: rgba(0, 0, 0, 0.238);
   font-size: 1.5rem;
   color: white; 
   text-align: center;
