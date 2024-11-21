@@ -7,8 +7,10 @@
       <ul>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/daytona">Ferrari Daytona</router-link></li>
+        <li><a href="/3d">3D</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
+        
       </ul>
     </nav>
     <div class="hamburger" @click="toggleMenu">
